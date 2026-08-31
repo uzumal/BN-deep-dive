@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  .card {
+    width:1200px; height:630px; background:#fcfcfb; color:#0b0b0b;
+    font-family:"Noto Sans CJK JP","Noto Sans JP",sans-serif;
+    padding:56px 72px 40px; display:flex; flex-direction:column;
+  }
+  .top { display:flex; justify-content:space-between; align-items:center; }
+  .badge { display:inline-block; background:#eb6834; color:#fff; font-size:26px;
+           font-weight:600; padding:8px 22px; border-radius:6px; letter-spacing:.06em; }
+  .date { font-size:28px; color:#52514e; }
+  .where { margin-top:34px; font-size:34px; color:#52514e; font-weight:500; }
+  .hero { margin-top:6px; line-height:1.05; font-weight:700; }
+  .hero .num { font-size:148px; letter-spacing:-.02em; }
+  .hero .unit { font-size:58px; font-weight:700; margin-left:6px; }
+  .sub { margin-top:8px; font-size:38px; font-weight:600; }
+  .detail { margin-top:28px; display:flex; gap:56px; align-items:baseline; }
+  .d-label { font-size:24px; color:#52514e; }
+  .d-value { font-size:40px; font-weight:600; margin-top:2px; }
+  .d-new .d-value { border-bottom:5px solid #eb6834; padding-bottom:4px; }
+  .d-old .d-value { color:#52514e; }
+  .foot { margin-top:auto; display:flex; justify-content:space-between; font-size:22px; color:#52514e; }
+</style>
+<div class="card">
+  <div class="top">
+    <span class="badge">記録更新</span>
+    <span class="date">{{new_date}}</span>
+  </div>
+  <div class="where">{{pref}}・{{station}}｜{{element}}</div>
+  <div class="hero"><span class="num">{{years_stood}}</span><span class="unit">年間</span></div>
+  <div class="sub">破られなかった記録が、今日更新されました。</div>
+  <div class="detail">
+    <div class="d-new"><div class="d-label">新しい記録</div><div class="d-value">{{new_value}}</div></div>
+    <div class="d-old"><div class="d-label">これまでの記録</div><div class="d-value">{{old_value}}（{{old_date}}）</div></div>
+  </div>
+  <div class="foot">
+    <span>出典: 気象庁「観測史上1位の値 更新状況」より作成</span>
+    <span>何年ぶり記録簿（仮）</span>
+  </div>
+</div>
